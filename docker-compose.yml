@@ -1,0 +1,10 @@
+services:
+  zork-bot:
+    build: .
+    volumes:
+      - ./saves:/save
+      - ./zuliprc:/app/zuliprc:ro
+    environment:
+      - ZORK_CHANNEL=${ZORK_CHANNEL:-zork}
+      - ZORK_TOPIC=${ZORK_TOPIC:-adventure}
+    restart: unless-stopped

@@ -1,0 +1,4 @@
+[api]
+email=zork-bot@your-zulip-domain.zulipchat.com
+key=YOUR_API_KEY_HERE
+site=https://your-zulip-domain.zulipchat.com

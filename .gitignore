@@ -1,0 +1,5 @@
+zuliprc
+saves/
+__pycache__/
+*.pyc
+.env

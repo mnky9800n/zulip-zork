@@ -1,14 +1,9 @@
 FROM clockworksoul/zork1 AS game
 
-FROM python:3.12-bookworm
+FROM python:3.12-slim
 
-# Install frotz (the interactive fiction interpreter)
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    frotz \
-    sudo \
-    && rm -rf /var/lib/apt/lists/*
-
-# Copy game data from the zork1 image
+# Copy frotz and game data from the zork1 image
+COPY --from=game /usr/bin/frotz /usr/bin/frotz
 COPY --from=game /home/frotz/DATA/ZORK1.DAT /home/frotz/DATA/ZORK1.DAT
 
 # Set up save directory

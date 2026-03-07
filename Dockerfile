@@ -2,8 +2,12 @@ FROM clockworksoul/zork1 AS game
 
 FROM python:3.12-slim
 
-# Copy frotz and game data from the zork1 image
-COPY --from=game /usr/bin/frotz /usr/bin/frotz
+# Install frotz (dfrotz is the non-curses version, ideal for programmatic use)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    frotz \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy game data from the zork1 image
 COPY --from=game /home/frotz/DATA/ZORK1.DAT /home/frotz/DATA/ZORK1.DAT
 
 # Set up save directory

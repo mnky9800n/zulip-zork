@@ -22,7 +22,7 @@ class ZorkSession:
 
     def start(self):
         self.process = pexpect.spawn(
-            f"/usr/bin/frotz {self.game_dat}",
+            f"/usr/games/dfrotz {self.game_dat}",
             cwd=self.save_dir,
             encoding="utf-8",
             timeout=5,

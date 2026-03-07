@@ -21,5 +21,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY zork_bot.py .
 
 ENV TERM=xterm
+ENV PYTHONUNBUFFERED=1
 
 CMD ["python", "zork_bot.py"]

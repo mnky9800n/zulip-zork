@@ -27,3 +27,7 @@ Commands go through `/game` — everything else is just chat.
 2. Place `zuliprc` in the project root
 3. Create a channel (default: `#play-zork`)
 4. `docker compose up --build -d`
+
+## Comments
+
+`zulip-zork` is based on [Bot-Builder](https://github.com/TansyArron/Bot-Builder) and [docker-zork1](https://github.com/TansyArron/Bot-Builder).

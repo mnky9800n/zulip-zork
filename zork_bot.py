@@ -100,6 +100,8 @@ class ZorkBot:
 
         content = msg["content"].strip()
 
+        print(msg)
+
         # Check for /game prefix
         if not content.startswith(GAME_PREFIX):
             return

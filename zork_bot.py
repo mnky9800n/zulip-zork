@@ -142,7 +142,7 @@ class ZorkBot:
             return
 
         # Only respond in our channel
-        if msg.get("display_recipient") != self.channel:
+        if msg.get("display_recipient") != self.channel and msg["subject"] != self.topic:
             return
 
         content = msg["content"].strip()

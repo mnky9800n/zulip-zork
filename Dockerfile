@@ -1,4 +1,5 @@
-FROM clockworksoul/zork1 AS game
+# FROM clockworksoul/zork1 AS game
+FROM betamike/z-docker AS game
 
 FROM python:3.12-slim
 
@@ -8,7 +9,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy game data from the zork1 image
-COPY --from=game /home/frotz/DATA/ZORK1.DAT /home/frotz/DATA/ZORK1.DAT
+# COPY --from=game /home/frotz/DATA/ZORK1.DAT /home/frotz/DATA/ZORK1.DAT
+COPY --from=game /home/frotz/ /home/frotz/DATA
 
 # Set up save directory
 RUN mkdir -p /save && chmod 777 /save

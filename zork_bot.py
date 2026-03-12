@@ -8,7 +8,8 @@ GAME_CHANNEL = os.environ.get("ZORK_CHANNEL", "play-zork")
 GAME_TOPIC = os.environ.get("ZORK_TOPIC", "adventure")
 GAME_PREFIX = "/game"
 SAVE_DIR = "/save"
-GAME_DAT = os.environ.get("ZORK_DAT", "/home/frotz/DATA/ZORK1.DAT")
+# GAME_DAT = os.environ.get("ZORK_DAT", "/home/frotz/DATA/ZORK1.DAT")
+GAME_DAT = os.environ.get("ZORK_DAT", "/home/frotz/DATA/zork1-r88-s840726.z3")
 
 
 class ZorkSession:

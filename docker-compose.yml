@@ -1,4 +1,5 @@
 services:
+
   zork-bot:
     build: .
     volumes:
@@ -7,4 +8,17 @@ services:
     environment:
       - ZORK_CHANNEL=${ZORK_CHANNEL:-play-zork}
       - ZORK_TOPIC=${ZORK_TOPIC:-adventure}
+      - GAME_NAME=zork1
     restart: unless-stopped
+
+  zork2-bot:
+    build: .
+    volumes:
+      - ./saves:/save
+      - ./zuliprc:/app/zuliprc:ro
+    environment:
+      - ZORK_CHANNEL=${ZORK_CHANNEL:-play-zork}
+      - ZORK_TOPIC=${ZORK_TOPIC:-zork2}
+      - GAME_NAME=zork2
+    restart: unless-stopped
+

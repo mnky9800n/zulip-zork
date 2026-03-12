@@ -2,7 +2,7 @@ import os
 import re
 import zulip
 import pexpect
-
+import sys
 
 GAME_CHANNEL = os.environ.get("ZORK_CHANNEL", "play-zork")
 GAME_TOPIC = os.environ.get("ZORK_TOPIC", "adventure")
@@ -26,6 +26,7 @@ class ZorkSession:
             cwd=self.save_dir,
             encoding="utf-8",
             timeout=5,
+            logfile=sys.stdout.buffer
         )
         # Read the initial game output
         self._read_until_prompt()
@@ -67,6 +68,7 @@ class ZorkSession:
         """Kill and restart the game process."""
         if self.process and self.process.isalive():
             self.process.terminate(force=True)
+        print(self.process.exitstatus, '\n\n', self.process.signalstatus)
         self.start()
 
 

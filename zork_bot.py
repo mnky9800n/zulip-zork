@@ -26,7 +26,7 @@ class ZorkSession:
             cwd=self.save_dir,
             encoding="utf-8",
             timeout=5,
-            logfile=sys.stdout.buffer
+            logfile=sys.stdout
         )
         # Read the initial game output
         self._read_until_prompt()

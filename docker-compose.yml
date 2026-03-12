@@ -5,6 +5,6 @@ services:
       - ./saves:/save
       - ./zuliprc:/app/zuliprc:ro
     environment:
-      - ZORK_CHANNEL=${ZORK_CHANNEL:-zork}
+      - ZORK_CHANNEL=${ZORK_CHANNEL:-play-zork}
       - ZORK_TOPIC=${ZORK_TOPIC:-adventure}
     restart: unless-stopped

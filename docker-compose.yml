@@ -22,3 +22,13 @@ services:
       - GAME_NAME=zork2
     restart: unless-stopped
 
+  amfv-bot:
+    build: .
+    volumes:
+      - ./saves:/save
+      - ./zuliprc:/app/zuliprc:ro
+    environment:
+      - ZORK_CHANNEL=${ZORK_CHANNEL:-play-zork}
+      - ZORK_TOPIC=${ZORK_TOPIC:-amfv}
+      - GAME_NAME=amfv
+    restart: unless-stopped
